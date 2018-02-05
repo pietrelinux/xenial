@@ -64,6 +64,7 @@ update-locale LC_ALL=es_ES.UTF-8 LANG=es_ES.UTF-8 LC_MESSAGES=POSIX
 dpkg-reconfigure locales
 dpkg-reconfigure -f noninteractive tzdata
 apt-get upgrade -y
+apt-get -f install -y
 apt-get install -y ubuntu-desktop xfce4 onboard iw 
 adduser xenial
 addgroup xenial sudo
@@ -80,6 +81,6 @@ sudo mount -t proc /proc /xenial/proc
 chroot /xenial /usr/bin/qemu-arm-static /bin/sh -i ./home/config.sh && exit 
 umount /xenial/{sys,proc,dev/pts,dev}
 umount /xenial
-cp  /mnt/ramdisk/xenial.img /home/sunxi/Imagen/
+cp  /mnt/ramdisk/xenial.img /home/
 rm config.sh
 exit
